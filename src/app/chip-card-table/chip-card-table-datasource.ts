@@ -1,33 +1,35 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import {map, tap} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import {Passage} from "../model/passage/passage";
-import {AfterViewInit, Injectable, ViewChild} from "@angular/core";
-import {PassageService} from "../service/passage/passage.service";
-
+import {Injectable, ViewChild} from "@angular/core";
+import {ChipCard} from "../model/chip-card/ChipCard";
+import {ChipCardsService} from "../service/chip-card/chip-cards.service";
 
 @Injectable()
-export class PassageDataTableDataSource extends DataSource<Passage> {
+export class ChipCardTableDataSource extends DataSource<ChipCard> {
 
-    data !: Passage[];
+    data !: ChipCard[];
     length !: number;
     @ViewChild(MatPaginator)
     paginator: MatPaginator | undefined;
     sort: MatSort | undefined;
 
-    constructor(private passageService: PassageService) {
+    constructor(private chipCardsService: ChipCardsService) {
         super();
     }
 
-    connect(): Observable<Passage[]> {
+    connect(): Observable<ChipCard[]> {
         return this.load();
     }
 
-    load(): Observable<Passage[]> {
+    disconnect(): void {
+    }
+
+    load(): Observable<ChipCard[]> {
         if (this.paginator == undefined) throw Error('Please set the paginator and sort on the data source before connecting.');
-        return this.passageService.fetch(this.paginator)
+        return this.chipCardsService.fetch(this.paginator)
             .pipe(
                 map(lazyData => {
                     this.length = lazyData.count;
@@ -37,10 +39,6 @@ export class PassageDataTableDataSource extends DataSource<Passage> {
             );
     }
 
-    /**
-     *  Called when the table is being destroyed. Use this function, to clean up
-     * any open connections or free any held resources that were set up during connect.
-     */
-    disconnect(): void {}
 
 }
+
