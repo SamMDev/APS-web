@@ -1,0 +1,49 @@
+header {
+    background: lightgray;
+    padding: 0;
+    border-bottom: 1px solid lightgreen;
+}
+
+a {
+    color: green;
+}
+
+a:hover {
+    background: white;
+}
+
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+a.logo {
+    font-weight: bold;
+    padding: 1em;
+}
+
+div .nav-bar {
+}
+
+a.nav-item {
+    font-weight: bold;
+    padding: 1em;
+    display: inline-block;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li a {
+    padding: 1em;
+    display: inline-block;
+}
+
+select {
+
+}
