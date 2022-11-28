@@ -11,6 +11,7 @@ import {PassageService} from "../service/passage.service";
 @Injectable()
 export class PassageDataTableDataSource extends DataSource<Passage> {
 
+    data !: Passage[];
     length !: number;
     @ViewChild(MatPaginator)
     paginator: MatPaginator | undefined;
@@ -36,6 +37,7 @@ export class PassageDataTableDataSource extends DataSource<Passage> {
             .pipe(
                 map(lazyData => {
                     this.length = lazyData.count;
+                    this.data = lazyData.data;
                     return lazyData.data;
                 })
             );

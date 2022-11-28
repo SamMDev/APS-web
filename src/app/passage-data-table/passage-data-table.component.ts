@@ -15,7 +15,6 @@ import {tap} from "rxjs/operators";
 export class PassageDataTableComponent implements AfterViewInit {
 
     displayedColumns = ['passageId', 'time', 'gatewayCode', 'gatewayName', 'personName'];
-    data !: Passage[];
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;
@@ -35,6 +34,6 @@ export class PassageDataTableComponent implements AfterViewInit {
             .pipe(
                 tap(() => this.dataSource.paginator = this.paginator)
             )
-            .subscribe(() => this.dataSource.load().subscribe(res => this.data = res));
+            .subscribe(() => this.dataSource.load().subscribe(res => this.dataSource.data = res));
     }
 }
