@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { GatewayTableDataSource } from './gateway-table-datasource';
-import {Gateway} from "../model/gateway/Gateway";
+import {Gateway} from "../../model/gateway/Gateway";
 import {tap} from "rxjs/operators";
 
 @Component({

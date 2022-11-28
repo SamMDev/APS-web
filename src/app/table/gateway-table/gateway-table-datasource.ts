@@ -3,9 +3,9 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {map} from 'rxjs/operators';
 import {Observable, of as observableOf, merge} from 'rxjs';
-import {Gateway} from "../model/gateway/Gateway";
+import {Gateway} from "../../model/gateway/Gateway";
 import {Injectable, ViewChild} from "@angular/core";
-import {GatewayService} from "../service/gateway/gateway.service";
+import {GatewayService} from "../../service/gateway/gateway.service";
 
 @Injectable()
 export class GatewayTableDataSource extends DataSource<Gateway> {

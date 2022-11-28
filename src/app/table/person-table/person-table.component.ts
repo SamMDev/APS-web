@@ -2,40 +2,34 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { ChipCardTableDataSource } from './chip-card-table-datasource';
-import {ChipCard} from "../model/chip-card/ChipCard";
+import { PersonTableDataSource } from './person-table-datasource';
+import {Person} from "../../model/person/Person";
 import {tap} from "rxjs/operators";
 
 @Component({
-  selector: 'app-chip-card-table',
-  templateUrl: './chip-card-table.component.html',
-  styleUrls: ['./chip-card-table.component.css']
+  selector: 'app-person-table',
+  templateUrl: './person-table.component.html',
+  styleUrls: ['./person-table.component.css']
 })
-export class ChipCardTableComponent implements AfterViewInit {
-
+export class PersonTableComponent implements AfterViewInit {
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;
-    @ViewChild(MatTable) table!: MatTable<ChipCard>;
-    dataSource: ChipCardTableDataSource;
+    @ViewChild(MatTable) table!: MatTable<Person>;
 
-    displayedColumns = ['id', 'serialNumber', 'ownerName'];
-
-    constructor(public chipCardDatatable: ChipCardTableDataSource) {
-        this.dataSource = chipCardDatatable;
+    constructor(public dataSource : PersonTableDataSource) {
     }
 
+    displayedColumns = ['id', 'name'];
 
     ngAfterViewInit(): void {
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.table.dataSource = this.dataSource;
-        this.dataSource.connect();
 
         this.dataSource.paginator.page
             .pipe(
                 tap(() => this.dataSource.paginator = this.paginator)
             )
             .subscribe(() => this.dataSource.load().subscribe(res => this.dataSource.data = res));
-
     }
 }

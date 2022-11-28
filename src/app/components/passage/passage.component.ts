@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Passage} from "../model/passage/passage";
+import {Passage} from "../../model/passage/passage";
 
 const data: Passage[] = [
     {passageId: 1, time: new Date(), gatewayCode: "empty", gatewayName: "emptyName", personName: "Samuel"}
