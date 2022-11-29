@@ -7,6 +7,7 @@ import {LazyDataServiceService} from "../data/lazy-data-service.service";
 import {LazyData} from "../../model/LazyData";
 import {AbstractLazyDataService} from "../AbstractLazyDataService";
 import {PassageDetail} from "../../model/passage/passage-detail";
+import {PassageForChipCard} from "../../model/passage/PassageForChipCard";
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,14 @@ export class PassageService implements AbstractLazyDataService<Passage, PassageD
     getDetail(id : any): Observable<PassageDetail> {
         return this.httpClient.get<PassageDetail>(
             "http://localhost:8080/passage/" + id
+        );
+    }
+
+    getPassagesForChipCard(id : any, paginator: MatPaginator) : Observable<LazyData<PassageForChipCard>> {
+        return this.httpClient.post<LazyData<PassageForChipCard>>(
+            "http://localhost:8080/passage/chip-card/" + id,
+            this.lazyDataService.getCriteriaFromPaginator(paginator),
+            {}
         );
     }
 
