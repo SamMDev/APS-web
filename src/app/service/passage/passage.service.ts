@@ -26,6 +26,12 @@ export class PassageService implements AbstractLazyDataService<Passage, PassageD
         );
     }
 
+    getDetail(id : any): Observable<PassageDetail> {
+        return this.httpClient.get<PassageDetail>(
+            "http://localhost:8080/passage/" + id
+        );
+    }
+
 
 
 

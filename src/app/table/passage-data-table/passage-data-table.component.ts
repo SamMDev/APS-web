@@ -5,6 +5,7 @@ import { MatTable } from '@angular/material/table';
 import { PassageDataTableDataSource } from './passage-data-table-datasource';
 import {Passage} from "../../model/passage/passage";
 import {tap} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-passage-data-table',
@@ -19,7 +20,7 @@ export class PassageDataTableComponent implements AfterViewInit {
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;
     @ViewChild(MatTable) table!: MatTable<Passage>;
-    constructor(public dataSource: PassageDataTableDataSource) {
+    constructor(public dataSource: PassageDataTableDataSource, private router: Router) {
     }
 
 
@@ -35,5 +36,10 @@ export class PassageDataTableComponent implements AfterViewInit {
                 tap(() => this.dataSource.paginator = this.paginator)
             )
             .subscribe(() => this.dataSource.load().subscribe(res => this.dataSource.data = res));
+    }
+
+    redirectToDetail(id: number): void {
+        console.log('HERE')
+        this.router.navigate(['http://localhost:4200/passage/'], {queryParams: {id : id}});
     }
 }

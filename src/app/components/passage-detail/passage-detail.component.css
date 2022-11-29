@@ -1,0 +1,16 @@
+.detail-wrapper {
+    margin: 2% auto;
+    width: 70%;
+    border: 1px solid green;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.detail-wrapper h1 {
+    text-align: center;
+}
+
+.detail-wrapper p {
+    padding-left: 10%;
+    text-align: left;
+}

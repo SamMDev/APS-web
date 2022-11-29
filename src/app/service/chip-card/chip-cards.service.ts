@@ -7,6 +7,7 @@ import {ChipCardDetail} from "../../model/chip-card/ChipCardDetail";
 import {MatPaginator} from "@angular/material/paginator";
 import {Observable} from "rxjs";
 import {LazyData} from "../../model/LazyData";
+import {PassageDetail} from "../../model/passage/passage-detail";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,12 @@ export class ChipCardsService implements AbstractLazyDataService<ChipCard, ChipC
             "http://localhost:8080/chip-card/load",
             this.lazyDataService.getCriteriaFromPaginator(paginator),
             {}
+        );
+    }
+
+    getDetail(id : number): Observable<ChipCardDetail> {
+        return this.httpClient.get<ChipCardDetail>(
+            "http://localhost:8080/chip-card/" + id
         );
     }
 

@@ -21,6 +21,8 @@ import {GatewayTableDataSource} from "./table/gateway-table/gateway-table-dataso
 import { PersonTableComponent } from './table/person-table/person-table.component';
 import {PersonTableDataSource} from "./table/person-table/person-table-datasource";
 import { PersonComponent } from './components/person/person.component';
+import { PassageDetailComponent } from './components/passage-detail/passage-detail.component';
+import { ChipCardDetailComponent } from './components/chip-card-detail/chip-card-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { PersonComponent } from './components/person/person.component';
     GatewayComponent,
     GatewayTableComponent,
     PersonTableComponent,
-    PersonComponent
+    PersonComponent,
+    PassageDetailComponent,
+    ChipCardDetailComponent
   ],
   imports: [
     BrowserModule,
