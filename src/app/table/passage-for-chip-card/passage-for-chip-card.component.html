@@ -15,7 +15,10 @@
         <h3>Person</h3>
         <hr/>
         <p>
-            <b>Id: </b>{{ chipCardDetail.personId }}
+            <b>Id: </b>
+            <a href="/people/{{ chipCardDetail.personId }}" target="_blank">
+                {{ chipCardDetail.personId }}
+            </a>
         </p>
         <p>
             <b>Name: </b>{{ chipCardDetail.personName }}

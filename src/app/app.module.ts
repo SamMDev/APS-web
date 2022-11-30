@@ -29,6 +29,7 @@ import { PassageForGatewayTableComponent } from './table/passage-for-gateway-tab
 import {PassageForGateway} from "./model/passage/PassageForGateway";
 import {PassageForGatewayTableDataSource} from "./table/passage-for-gateway-table/passage-for-gateway-table-datasource";
 import { GatewayDetailComponent } from './components/gateway-detail/gateway-detail.component';
+import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { GatewayDetailComponent } from './components/gateway-detail/gateway-deta
     ChipCardDetailComponent,
     PassageForChipCardComponent,
     PassageForGatewayTableComponent,
-    GatewayDetailComponent
+    GatewayDetailComponent,
+    PersonDetailComponent
   ],
   imports: [
     BrowserModule,

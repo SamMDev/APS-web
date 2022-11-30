@@ -62,7 +62,11 @@
       <!-- Name Column -->
       <ng-container matColumnDef="personId">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>personId</th>
-          <td mat-cell *matCellDef="let row">{{row.personId}}</td>
+          <td mat-cell *matCellDef="let row">
+              <a href="/people/{{row.personId}}" target="_blank">
+                  {{row.personId}}
+              </a>
+          </td>
       </ng-container>
 
       <!-- Name Column -->

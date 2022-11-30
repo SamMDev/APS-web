@@ -15,7 +15,10 @@
         <h3>Gateway</h3>
         <hr/>
         <p>
-            <b>Id: </b>{{ passageDetail.gatewayId }}
+            <b>Id: </b>
+            <a href="/gateway/{{ passageDetail.gatewayId }}" target="_blank">
+                {{ passageDetail.gatewayId }}
+            </a>
         </p>
         <p>
             <b>Name: </b>{{ passageDetail.gatewayName }}
@@ -29,7 +32,10 @@
         <h3>Chip card</h3>
         <hr/>
         <p>
-            <b>Id: </b>{{ passageDetail.chipCardId }}
+            <b>Id: </b>
+            <a href="/chip-card/{{ passageDetail.chipCardId }}" target="_blank">
+                {{ passageDetail.chipCardId }}
+            </a>
         </p>
         <p>
             <b>Serial number: </b>{{ passageDetail.chipCardSerialNumber }}
@@ -39,7 +45,8 @@
         <h3>Person</h3>
         <hr/>
         <p>
-            <b>Id: </b>{{ passageDetail.personId }}
+            <b>Id: </b>
+            <a href="people/{{ passageDetail.personId }}" target="_blank">{{ passageDetail.personId }}</a>
         </p>
 
         <p>

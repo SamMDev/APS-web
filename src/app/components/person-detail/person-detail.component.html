@@ -1,0 +1,25 @@
+<div class="detail-wrapper">
+    <h1>
+        PERSON DETAIL
+    </h1>
+    <h1>
+        ID: {{ personDetail.id }}
+    </h1>
+
+    <div>
+        <p>
+            <b>Name: </b>{{ personDetail.name }}
+        </p>
+
+        <hr/>
+        <p>
+            <b>Chip cards: </b>
+        </p>
+        <div *ngFor="let card of personDetail.chipCards">
+            <p>
+                <b>Card ID: </b> {{card.chipCardId}}
+                <b>Card serial number: </b> {{card.chipCardSerialNumber}}</p>
+        </div>
+
+    </div>
+</div>

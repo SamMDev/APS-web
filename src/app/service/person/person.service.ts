@@ -8,6 +8,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import { Observable } from 'rxjs';
 import {LazyData} from "../../model/LazyData";
 import {Passage} from "../../model/passage/passage";
+import {PassageDetail} from "../../model/passage/passage-detail";
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,12 @@ export class PersonService implements AbstractLazyDataService<Person, PersonDeta
             "http://localhost:8080/person/load",
             this.lazyDataService.getCriteriaFromPaginator(paginator),
             {}
+        );
+    }
+
+    getDetail(id : any) : Observable<PersonDetail> {
+        return this.httpClient.get<PersonDetail>(
+            "http://localhost:8080/person/" + id
         );
     }
 
