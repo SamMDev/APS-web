@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ChipCardDetail} from "../../model/chip-card/ChipCardDetail";
 import {ActivatedRoute} from "@angular/router";
 import {ChipCardsService} from "../../service/chip-card/chip-cards.service";
-import {PassageForChipCardComponent} from "../../table/passage-for-chip-card/passage-for-chip-card.component";
 import {PassageForChipCardDataSource} from "../../table/passage-for-chip-card/passage-for-chip-card-datasource";
 
 @Component({

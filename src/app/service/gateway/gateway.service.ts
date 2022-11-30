@@ -25,5 +25,11 @@ export class GatewayService implements AbstractLazyDataService<Gateway, GatewayD
         );
     }
 
+    getDetail(id : any): Observable<GatewayDetail> {
+        return this.httpClient.get<GatewayDetail>(
+            "http://localhost:8080/gateway/" + id
+        );
+    }
+
 
 }

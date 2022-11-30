@@ -25,6 +25,10 @@ import { PassageDetailComponent } from './components/passage-detail/passage-deta
 import { ChipCardDetailComponent } from './components/chip-card-detail/chip-card-detail.component';
 import { PassageForChipCardComponent } from './table/passage-for-chip-card/passage-for-chip-card.component';
 import {PassageForChipCardDataSource} from "./table/passage-for-chip-card/passage-for-chip-card-datasource";
+import { PassageForGatewayTableComponent } from './table/passage-for-gateway-table/passage-for-gateway-table.component';
+import {PassageForGateway} from "./model/passage/PassageForGateway";
+import {PassageForGatewayTableDataSource} from "./table/passage-for-gateway-table/passage-for-gateway-table-datasource";
+import { GatewayDetailComponent } from './components/gateway-detail/gateway-detail.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,9 @@ import {PassageForChipCardDataSource} from "./table/passage-for-chip-card/passag
     PersonComponent,
     PassageDetailComponent,
     ChipCardDetailComponent,
-    PassageForChipCardComponent
+    PassageForChipCardComponent,
+    PassageForGatewayTableComponent,
+    GatewayDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,9 @@ import {PassageForChipCardDataSource} from "./table/passage-for-chip-card/passag
       ChipCardTableDataSource,
       GatewayTableDataSource,
       PersonTableDataSource,
-      PassageForChipCardDataSource
+      PassageForChipCardDataSource,
+      PassageForGateway,
+      PassageForGatewayTableDataSource
   ],
   bootstrap: [AppComponent]
 })

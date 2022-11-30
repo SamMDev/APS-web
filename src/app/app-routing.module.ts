@@ -7,6 +7,7 @@ import {GatewayComponent} from "./components/gateway/gateway.component";
 import {PersonComponent} from "./components/person/person.component";
 import {PassageDetailComponent} from "./components/passage-detail/passage-detail.component";
 import {ChipCardDetailComponent} from "./components/chip-card-detail/chip-card-detail.component";
+import {GatewayDetailComponent} from "./components/gateway-detail/gateway-detail.component";
 
 const routes: Routes = [
     {path: "passage", component: PassageComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
     {path: "gateway", component: GatewayComponent},
     {path: "people", component: PersonComponent},
     {path: "passage/:id", component: PassageDetailComponent},
-    {path: "chip-card/:id", component: ChipCardDetailComponent}
+    {path: "chip-card/:id", component: ChipCardDetailComponent},
+    {path: "gateway/:id", component: GatewayDetailComponent}
 ];
 
 @NgModule({
